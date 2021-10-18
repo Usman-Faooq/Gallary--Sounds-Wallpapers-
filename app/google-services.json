@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "249489000730",
+    "project_id": "tabstempletes",
+    "storage_bucket": "tabstempletes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249489000730:android:b41dff043bbf543f6844a3",
+        "android_client_info": {
+          "package_name": "com.example.tabtemplets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "249489000730-gti2b19393sul2g6k0d1f8c6pq3lurei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWBVC1TDQlQ3h7dZsUiHOlJikSpu6FwTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "249489000730-gti2b19393sul2g6k0d1f8c6pq3lurei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

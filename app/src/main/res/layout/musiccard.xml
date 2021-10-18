@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12sp"
+    android:elevation="5sp"
+    android:layout_marginLeft="10sp"
+    android:layout_marginTop="3sp"
+    android:layout_marginRight="10sp"
+    app:cardElevation="2sp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="#C5DFF3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/playaudiobtn"
+            android:layout_margin="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:srcCompat="@drawable/audioicon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:layout_marginTop="15sp"
+            android:layout_marginLeft="10sp"
+            android:id="@+id/musictext"
+            android:hint="Music Name"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
