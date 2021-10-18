@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TabTemplets">
         <activity
+            android:name=".TabsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RegistrationForm.RegistrationForm"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

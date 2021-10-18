@@ -1,12 +1,12 @@
-package com.example.tabtemplets;
+package com.example.tabtemplets.DataVeriables;
 
-public class Model {
+public class FirebaseDataVeriables {
     String URL, musicname, musicURL;
 
-    public Model() {
+    public FirebaseDataVeriables() {
     }
 
-    public Model(String URL, String musicname, String musicURL) {
+    public FirebaseDataVeriables(String URL, String musicname, String musicURL) {
         this.URL = URL;
         this.musicname = musicname;
         this.musicURL = musicURL;
