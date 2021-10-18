@@ -1,4 +1,4 @@
-package com.example.tabtemplets;
+package com.example.tabtemplets.Adapters;
 
 import android.media.MediaPlayer;
 import android.view.LayoutInflater;
@@ -9,25 +9,27 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tabtemplets.DataVeriables.FirebaseDataVeriables;
+import com.example.tabtemplets.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MusicAdapter extends FirebaseRecyclerAdapter<Model, MusicAdapter.holder> {
+public class MusicAdapter extends FirebaseRecyclerAdapter<FirebaseDataVeriables, MusicAdapter.holder> {
 
-    public MusicAdapter(@NonNull FirebaseRecyclerOptions<Model> options) {
+    public MusicAdapter(@NonNull FirebaseRecyclerOptions<FirebaseDataVeriables> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull holder holder, int position, @NonNull Model model) {
-        holder.tv.setText(model.getMusicname());
+    protected void onBindViewHolder(@NonNull holder holder, int position, @NonNull FirebaseDataVeriables firebaseDataVeriables) {
+        holder.tv.setText(firebaseDataVeriables.getMusicname());
         holder.audiobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MediaPlayer mp = new MediaPlayer();
                 try {
-                    mp.setDataSource(model.getMusicURL());
+                    mp.setDataSource(firebaseDataVeriables.getMusicURL());
                     mp.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                         @Override
                         public void onPrepared(MediaPlayer mediaPlayer) {

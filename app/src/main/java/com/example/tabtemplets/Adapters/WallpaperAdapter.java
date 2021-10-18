@@ -1,28 +1,28 @@
-package com.example.tabtemplets;
+package com.example.tabtemplets.Adapters;
 
-import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.tabtemplets.DataVeriables.FirebaseDataVeriables;
+import com.example.tabtemplets.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class MyAdapter extends FirebaseRecyclerAdapter<Model, MyAdapter.viewholder> {
+public class WallpaperAdapter extends FirebaseRecyclerAdapter<FirebaseDataVeriables, WallpaperAdapter.viewholder> {
 
-    public MyAdapter(@NonNull FirebaseRecyclerOptions<Model> options) {
+    public WallpaperAdapter(@NonNull FirebaseRecyclerOptions<FirebaseDataVeriables> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull viewholder holder, int position, @NonNull Model model) {
-        Glide.with(holder.img.getContext()).load(model.getURL()).into(holder.img);
+    protected void onBindViewHolder(@NonNull viewholder holder, int position, @NonNull FirebaseDataVeriables firebaseDataVeriables) {
+        Glide.with(holder.img.getContext()).load(firebaseDataVeriables.getURL()).into(holder.img);
     }
 
     @NonNull

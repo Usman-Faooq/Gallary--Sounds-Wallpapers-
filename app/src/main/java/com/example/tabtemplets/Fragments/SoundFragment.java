@@ -1,4 +1,4 @@
-package com.example.tabtemplets;
+package com.example.tabtemplets.Fragments;
 
 import android.os.Bundle;
 
@@ -10,33 +10,35 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.tabtemplets.Adapters.MusicAdapter;
+import com.example.tabtemplets.DataVeriables.FirebaseDataVeriables;
+import com.example.tabtemplets.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class wallpaper_frag extends Fragment {
+public class SoundFragment extends Fragment {
 
     RecyclerView recyclerView;
-    MyAdapter adapter;
-
-    public wallpaper_frag() {
-    }
-
+    MusicAdapter adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_wallpaper_frag, container, false);
-        recyclerView = view.findViewById(R.id.recview);
+
+        View view = inflater.inflate(R.layout.fragment_sound_frag, container, false);
+
+        recyclerView = view.findViewById(R.id.soundrecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        FirebaseRecyclerOptions<Model> options =
-                new FirebaseRecyclerOptions.Builder<Model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("wallpapers"),Model.class).build();
+        FirebaseRecyclerOptions<FirebaseDataVeriables> options =
+                new FirebaseRecyclerOptions.Builder<FirebaseDataVeriables>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("sounds"), FirebaseDataVeriables.class).build();
 
-        adapter = new MyAdapter(options);
+        adapter = new MusicAdapter(options);
         recyclerView.setAdapter(adapter);
 
         return view;
     }
+
     @Override
     public void onStart() {
         super.onStart();
