@@ -13,7 +13,10 @@
             android:name=".TabsActivity"
             android:exported="true" />
         <activity
-            android:name=".RegistrationForm.RegistrationForm"
+            android:name=".UserForms.RegistrationForm"
+            android:exported="true" />
+        <activity
+            android:name=".UserForms.UpdateForm"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

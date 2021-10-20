@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,6 +23,8 @@ public class TabsActivity extends AppCompatActivity {
     TabItem soundtab, wallpapertab;
     ViewPager viewPager;
     FragmentsSlidingAdapter adapter;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,9 @@ public class TabsActivity extends AppCompatActivity {
         soundtab = findViewById(R.id.soundtab);
         wallpapertab = findViewById(R.id.wallpapertab);
         viewPager = findViewById(R.id.viewpager);
+
+        sharedPreferences = getSharedPreferences("LoginSession", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
         adapter = new FragmentsSlidingAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
@@ -70,7 +76,8 @@ public class TabsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.logoutbtn:
-                FirebaseAuth.getInstance().signOut();
+                editor.clear();
+                editor.apply();
                 finish();
                 break;
             default:

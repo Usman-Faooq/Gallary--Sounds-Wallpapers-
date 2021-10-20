@@ -28,7 +28,7 @@ public class WallpaperAdapter extends FirebaseRecyclerAdapter<FirebaseDataVeriab
     @NonNull
     @Override
     public viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.singlerowdesign,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.wallpapercard,parent,false);
         return new viewholder(view);
     }
 
@@ -36,7 +36,7 @@ public class WallpaperAdapter extends FirebaseRecyclerAdapter<FirebaseDataVeriab
         ImageView img;
         public viewholder(@NonNull View itemView) {
             super(itemView);
-            img = itemView.findViewById(R.id.wallpaperview);
+            img = itemView.findViewById(R.id.postedimage);
         }
     }
 }

@@ -2,27 +2,24 @@ package com.example.tabtemplets;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tabtemplets.Adapters.FragmentsSlidingAdapter;
-import com.example.tabtemplets.RegistrationForm.RegistrationForm;
+import com.example.tabtemplets.UserForms.RegistrationForm;
+import com.example.tabtemplets.UserForms.UpdateForm;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.tabs.TabItem;
-import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     Button loginbtn, regbtn;
     EditText useremail, userpassword;
     ProgressBar progressBar;
+
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    boolean loggedin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,17 @@ public class MainActivity extends AppCompatActivity {
         userpassword = findViewById(R.id.user_password);
         progressBar = findViewById(R.id.progressBar2);
         progressBar.setVisibility(View.INVISIBLE);
+
+        sharedPreferences = getSharedPreferences("LoginSession", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        useremail.setText(sharedPreferences.getString("userEMAIL",""));
+        userpassword.setText(sharedPreferences.getString("userPASS",""));
+        loggedin = sharedPreferences.getBoolean("loggedin", false);
+
+        if (loggedin){
+            Intent i = new Intent(MainActivity.this, TabsActivity.class);
+            startActivity(i);
+        }
 
         regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,12 +86,14 @@ public class MainActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 progressBar.setVisibility(View.INVISIBLE);
+                                editor.putString("userEMAIL", email);
+                                editor.putString("userPASS", pass);
+                                editor.putBoolean("loggedin", true);
+                                editor.apply();
                                 Intent i = new Intent(MainActivity.this, TabsActivity.class);
                                 startActivity(i);
                                 useremail.setEnabled(true);
                                 userpassword.setEnabled(true);
-                                useremail.setText("");
-                                userpassword.setText("");
                             }else{
                                 Toast.makeText(MainActivity.this, "Fail to Login!", Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.INVISIBLE);

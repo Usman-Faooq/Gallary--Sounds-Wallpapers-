@@ -1,14 +1,16 @@
-package com.example.tabtemplets.RegistrationForm;
+package com.example.tabtemplets.UserForms;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tabtemplets.R;
@@ -26,6 +28,8 @@ public class RegistrationForm extends AppCompatActivity {
     Button new_regbtn;
     ProgressBar progressBar;
 
+    TextView demoui;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,15 @@ public class RegistrationForm extends AppCompatActivity {
         new_regbtn = findViewById(R.id.new_reg_btn);
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
+
+        demoui = findViewById(R.id.newuidemo);
+        demoui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(RegistrationForm.this, UpdateForm.class);
+                startActivity(i);
+            }
+        });
 
         new_regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
