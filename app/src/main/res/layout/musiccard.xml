@@ -25,8 +25,9 @@
             android:clickable="true"
             app:srcCompat="@drawable/audioicon" />
 
+
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:layout_marginTop="15sp"
@@ -34,5 +35,19 @@
             android:id="@+id/musictext"
             android:hint="Music Name"/>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25sp"
+            android:layout_marginRight="20sp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/unlikeicon"
+                android:id="@+id/music_like_unlike"
+                android:layout_gravity="right"/>
+    </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

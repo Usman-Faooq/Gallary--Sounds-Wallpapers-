@@ -1,5 +1,6 @@
 package com.example.tabtemplets.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,14 +14,17 @@ import android.view.ViewGroup;
 
 import com.example.tabtemplets.Adapters.WallpaperAdapter;
 import com.example.tabtemplets.DataVeriables.FirebaseDataVeriables;
+import com.example.tabtemplets.FavouriteWallpaper;
 import com.example.tabtemplets.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class WallpaperFragment extends Fragment {
 
     RecyclerView recyclerView;
     WallpaperAdapter adapter;
+    FloatingActionButton btn;
 
     public WallpaperFragment() {
     }
@@ -38,6 +42,15 @@ public class WallpaperFragment extends Fragment {
 
         adapter = new WallpaperAdapter(options);
         recyclerView.setAdapter(adapter);
+
+        btn = view.findViewById(R.id.wallpaper_fav_float_btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), FavouriteWallpaper.class);
+                startActivity(i);
+            }
+        });
 
         return view;
     }

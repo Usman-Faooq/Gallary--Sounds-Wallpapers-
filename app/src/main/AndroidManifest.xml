@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TabTemplets">
         <activity
+            android:name=".FavouriteSound"
+            android:exported="true" />
+        <activity
+            android:name=".FavouriteWallpaper"
+            android:exported="true" />
+        <activity
             android:name=".TabsActivity"
             android:exported="true" />
         <activity
