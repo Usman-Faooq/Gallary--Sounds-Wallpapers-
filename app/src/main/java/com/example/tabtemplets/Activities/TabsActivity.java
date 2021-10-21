@@ -1,4 +1,4 @@
-package com.example.tabtemplets;
+package com.example.tabtemplets.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.tabtemplets.Adapters.FragmentsSlidingAdapter;
+import com.example.tabtemplets.R;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 

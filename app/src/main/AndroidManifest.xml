@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TabTemplets">
         <activity
-            android:name=".FavouriteSound"
+            android:name=".Activities.FavouriteSound"
             android:exported="true" />
         <activity
-            android:name=".FavouriteWallpaper"
+            android:name=".Activities.FavouriteWallpaper"
             android:exported="true" />
         <activity
-            android:name=".TabsActivity"
+            android:name=".Activities.TabsActivity"
             android:exported="true" />
         <activity
             android:name=".UserForms.RegistrationForm"

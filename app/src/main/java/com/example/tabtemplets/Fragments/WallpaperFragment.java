@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -14,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.tabtemplets.Adapters.WallpaperAdapter;
 import com.example.tabtemplets.DataVeriables.FirebaseDataVeriables;
-import com.example.tabtemplets.FavouriteWallpaper;
+import com.example.tabtemplets.Activities.FavouriteWallpaper;
 import com.example.tabtemplets.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

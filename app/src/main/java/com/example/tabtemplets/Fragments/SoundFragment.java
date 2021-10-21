@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.tabtemplets.Adapters.MusicAdapter;
 import com.example.tabtemplets.DataVeriables.FirebaseDataVeriables;
-import com.example.tabtemplets.FavouriteSound;
+import com.example.tabtemplets.Activities.FavouriteSound;
 import com.example.tabtemplets.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
