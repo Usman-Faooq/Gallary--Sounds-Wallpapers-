@@ -28,8 +28,6 @@ public class RegistrationForm extends AppCompatActivity {
     Button new_regbtn;
     ProgressBar progressBar;
 
-    TextView demoui;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,14 +41,6 @@ public class RegistrationForm extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
 
-        demoui = findViewById(R.id.newuidemo);
-        demoui.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(RegistrationForm.this, UpdateForm.class);
-                startActivity(i);
-            }
-        });
 
         new_regbtn.setOnClickListener(new View.OnClickListener() {
             @Override

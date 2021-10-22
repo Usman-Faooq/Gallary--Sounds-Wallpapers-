@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,7 +14,6 @@ import android.view.ViewGroup;
 
 import com.example.tabtemplets.Adapters.MusicAdapter;
 import com.example.tabtemplets.DataVeriables.FirebaseDataVeriables;
-import com.example.tabtemplets.Activities.FavouriteSound;
 import com.example.tabtemplets.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SoundFragment extends Fragment {
 
-    FloatingActionButton btn;
     RecyclerView recyclerView;
     MusicAdapter adapter;
     @Override
@@ -39,15 +38,6 @@ public class SoundFragment extends Fragment {
 
         adapter = new MusicAdapter(options);
         recyclerView.setAdapter(adapter);
-
-        btn = view.findViewById(R.id.music_fav_float_btn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getContext(), FavouriteSound.class);
-                startActivity(i);
-            }
-        });
 
         return view;
     }

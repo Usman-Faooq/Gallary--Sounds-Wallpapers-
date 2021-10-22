@@ -13,12 +13,4 @@
         android:layout_height="match_parent" >
     </androidx.recyclerview.widget.RecyclerView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/wallpaper_fav_float_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:layout_gravity="right|bottom"
-        android:layout_margin="20sp"
-        android:src="@drawable/likeicon" />
 </FrameLayout>

@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SimpleItemAnimator;
 
 import com.bumptech.glide.Glide;
 import com.example.tabtemplets.DataVeriables.FirebaseDataVeriables;
@@ -26,6 +27,7 @@ import com.google.firebase.ktx.Firebase;
 
 public class WallpaperAdapter extends FirebaseRecyclerAdapter<FirebaseDataVeriables, WallpaperAdapter.viewholder> {
 
+    boolean checkstatus = false;
     public WallpaperAdapter(@NonNull FirebaseRecyclerOptions<FirebaseDataVeriables> options) {
         super(options);
     }
@@ -51,28 +53,28 @@ public class WallpaperAdapter extends FirebaseRecyclerAdapter<FirebaseDataVeriab
                             reference.child(imageID).removeValue();
                             holder.likebtn.setImageResource(R.drawable.unlikeicon);
                             Toast.makeText(view.getContext(), "Removed from Favourite", Toast.LENGTH_SHORT).show();
-
+                            notifyDataSetChanged();
                         }
                     });
 
+                }else{
+                    holder.likebtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            FirebaseDataVeriables data = new FirebaseDataVeriables(imageID, imageURL);
+                            reference.child(imageID).setValue(data);
+                            holder.likebtn.setImageResource(R.drawable.likeicon);
+                            Toast.makeText(view.getContext(), "Added to Favourite", Toast.LENGTH_SHORT).show();
+                            notifyDataSetChanged();
+
+                        }
+                    });
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-
-        holder.likebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                FirebaseDataVeriables data = new FirebaseDataVeriables(imageID, imageURL);
-                reference.child(imageID).setValue(data);
-                holder.likebtn.setImageResource(R.drawable.likeicon);
-                Toast.makeText(view.getContext(), "Added to Favourite", Toast.LENGTH_SHORT).show();
 
             }
         });

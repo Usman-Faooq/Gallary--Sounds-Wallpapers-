@@ -71,6 +71,18 @@ public class MusicAdapter extends FirebaseRecyclerAdapter<FirebaseDataVeriables,
                             reference.child(musicid).removeValue();
                             holder.likebtn.setImageResource(R.drawable.unlikeicon);
                             Toast.makeText(view.getContext(), "Removed from Favourite", Toast.LENGTH_SHORT).show();
+                            notifyDataSetChanged();
+                        }
+                    });
+                }else{
+                    holder.likebtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            FirebaseDataVeriables data = new FirebaseDataVeriables(musicname, musicURL, musicid);
+                            reference.child(musicid).setValue(data);
+                            holder.likebtn.setImageResource(R.drawable.likeicon);
+                            Toast.makeText(view.getContext(), "Added to Favourite", Toast.LENGTH_SHORT).show();
+                            notifyDataSetChanged();
                         }
                     });
                 }
@@ -81,17 +93,6 @@ public class MusicAdapter extends FirebaseRecyclerAdapter<FirebaseDataVeriables,
 
             }
         });
-
-        holder.likebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseDataVeriables data = new FirebaseDataVeriables(musicname, musicURL, musicid);
-                reference.child(musicid).setValue(data);
-                holder.likebtn.setImageResource(R.drawable.likeicon);
-                Toast.makeText(view.getContext(), "Added to Favourite", Toast.LENGTH_SHORT).show();
-            }
-        });
-
     }
 
     @NonNull

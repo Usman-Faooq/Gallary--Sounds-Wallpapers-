@@ -10,19 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TabTemplets">
         <activity
-            android:name=".Activities.FavouriteSound"
-            android:exported="true" />
-        <activity
-            android:name=".Activities.FavouriteWallpaper"
-            android:exported="true" />
-        <activity
             android:name=".Activities.TabsActivity"
             android:exported="true" />
         <activity
             android:name=".UserForms.RegistrationForm"
-            android:exported="true" />
-        <activity
-            android:name=".UserForms.UpdateForm"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
