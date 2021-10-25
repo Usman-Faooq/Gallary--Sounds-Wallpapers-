@@ -2,14 +2,20 @@ package com.example.tabtemplets.DataVeriables;
 
 public class UserData {
 
-    public String name, email, password;
+    public String name, email, password, phone;
     public UserData() {
     }
 
-    public UserData(String name, String email, String password) {
+    public UserData(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
+    public UserData(String name, String email, String password, String phone) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.phone = phone;
     }
 
     public String getName() {

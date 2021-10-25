@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar2);
         progressBar.setVisibility(View.INVISIBLE);
 
+
         sharedPreferences = getSharedPreferences("LoginSession", MODE_PRIVATE);
         editor = sharedPreferences.edit();
         useremail.setText(sharedPreferences.getString("userEMAIL",""));

@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegistrationForm extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    EditText reg_name, reg_email, reg_password;
+    EditText reg_name, reg_email, reg_phone, reg_password;
     Button new_regbtn;
     ProgressBar progressBar;
 
@@ -36,6 +36,7 @@ public class RegistrationForm extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         reg_name = findViewById(R.id.new_reg_name);
         reg_email = findViewById(R.id.new_reg_email);
+        reg_phone = findViewById(R.id.new_reg_phone);
         reg_password = findViewById(R.id.new_reg_password);
         new_regbtn = findViewById(R.id.new_reg_btn);
         progressBar = findViewById(R.id.progressBar);
@@ -48,8 +49,9 @@ public class RegistrationForm extends AppCompatActivity {
                 String name = reg_name.getText().toString().trim();
                 String email = reg_email.getText().toString().trim();
                 String pass = reg_password.getText().toString().trim();
+                String phone = reg_phone.getText().toString().trim();
 
-                if (name.isEmpty() || email.isEmpty() || pass.isEmpty()){
+                if (name.isEmpty() || email.isEmpty() || pass.isEmpty() || phone.isEmpty()){
                     Toast.makeText(RegistrationForm.this, "All Fields Are Requried", Toast.LENGTH_SHORT).show();
                 }else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                     Toast.makeText(RegistrationForm.this, "Please Enter Valid Email Address", Toast.LENGTH_SHORT).show();
@@ -59,13 +61,14 @@ public class RegistrationForm extends AppCompatActivity {
                     progressBar.setVisibility(View.VISIBLE);
                     reg_name.setEnabled(false);
                     reg_email.setEnabled(false);
+                    reg_phone.setEnabled(false);
                     reg_password.setEnabled(false);
                     mAuth.createUserWithEmailAndPassword(email,pass)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        UserData data = new UserData(name, email, pass);
+                                        UserData data = new UserData(name, email, pass, phone);
                                         FirebaseDatabase.getInstance().getReference("Users")
                                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                 .setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -75,6 +78,7 @@ public class RegistrationForm extends AppCompatActivity {
                                                     Toast.makeText(RegistrationForm.this, "Registered Sucessfully", Toast.LENGTH_SHORT).show();
                                                     reg_name.setText("");
                                                     reg_email.setText("");
+                                                    reg_phone.setText("");
                                                     reg_password.setText("");
                                                     progressBar.setVisibility(View.INVISIBLE);
                                                 } else {
@@ -91,6 +95,7 @@ public class RegistrationForm extends AppCompatActivity {
                                         progressBar.setVisibility(View.INVISIBLE);
                                         reg_name.setEnabled(true);
                                         reg_email.setEnabled(true);
+                                        reg_phone.setEnabled(true);
                                         reg_password.setEnabled(true);
                                     }
                                 }

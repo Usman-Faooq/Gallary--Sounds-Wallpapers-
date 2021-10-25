@@ -6,16 +6,20 @@
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/drawable/backbtn.xml" value="0.2203125" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/drawable/cardborder.xml" value="0.2203125" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/drawable/edittextboxstyle.xml" value="0.2203125" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/drawable/favouriteicon.xml" value="0.2203125" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/drawable/useremail.xml" value="0.2203125" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/drawable/username.xml" value="0.2203125" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/drawable/userpassword.xml" value="0.2203125" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/drawable/userphone.xml" value="0.2203125" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/activity_fav_sound.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/activity_fav_wallpaper.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/activity_favourite_sound.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/activity_favourite_wallpaper.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/activity_registration_form.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/activity_tabs.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/activity_update_form.xml" value="0.25" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/activity_user_profile.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/fragment_favourite_sound.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/fragment_favourite_wallpaper.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/fragment_sound_frag.xml" value="0.20416666666666666" />
@@ -23,7 +27,9 @@
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/fragment_wallpaper_frag.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/griditem.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/musiccard.xml" value="0.25" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/navigation_drawer.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/singlerowdesign.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/toolbar.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/layout/wallpapercard.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/menu/bottom_navigation.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/U.G.ShEiKh/AndroidStudioProjects/TabTemplets/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
