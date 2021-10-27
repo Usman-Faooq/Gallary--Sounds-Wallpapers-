@@ -24,9 +24,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MusicAdapter extends FirebaseRecyclerAdapter<FirebaseDataVeriables, MusicAdapter.holder> {
+public class SoundAdapter extends FirebaseRecyclerAdapter<FirebaseDataVeriables, SoundAdapter.holder> {
 
-    public MusicAdapter(@NonNull FirebaseRecyclerOptions<FirebaseDataVeriables> options) {
+    public SoundAdapter(@NonNull FirebaseRecyclerOptions<FirebaseDataVeriables> options) {
         super(options);
     }
 

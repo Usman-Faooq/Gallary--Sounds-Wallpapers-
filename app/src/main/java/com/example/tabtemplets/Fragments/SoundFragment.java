@@ -1,10 +1,8 @@
 package com.example.tabtemplets.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,17 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tabtemplets.Adapters.MusicAdapter;
+import com.example.tabtemplets.Adapters.SoundAdapter;
 import com.example.tabtemplets.DataVeriables.FirebaseDataVeriables;
 import com.example.tabtemplets.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SoundFragment extends Fragment {
 
     RecyclerView recyclerView;
-    MusicAdapter adapter;
+    SoundAdapter adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,7 +33,7 @@ public class SoundFragment extends Fragment {
                 new FirebaseRecyclerOptions.Builder<FirebaseDataVeriables>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("sounds"), FirebaseDataVeriables.class).build();
 
-        adapter = new MusicAdapter(options);
+        adapter = new SoundAdapter(options);
         recyclerView.setAdapter(adapter);
 
         return view;

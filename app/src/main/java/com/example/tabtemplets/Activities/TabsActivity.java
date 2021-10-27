@@ -8,22 +8,20 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.tabtemplets.Adapters.FragmentsSlidingAdapter;
-import com.example.tabtemplets.FavSound;
-import com.example.tabtemplets.FavWallpaper;
-import com.example.tabtemplets.MainActivity;
+import com.example.tabtemplets.FavouriteSound;
+import com.example.tabtemplets.FavouriteWallpaper;
 import com.example.tabtemplets.R;
 import com.example.tabtemplets.UserProfile;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class TabsActivity extends AppCompatActivity {
 
@@ -64,10 +62,10 @@ public class TabsActivity extends AppCompatActivity {
                         break;
                     case R.id.fav:
                         if(flag == 0){
-                            Intent i = new Intent(TabsActivity.this, FavSound.class);
+                            Intent i = new Intent(TabsActivity.this, FavouriteSound.class);
                             startActivity(i);
                         }else{
-                            Intent i = new Intent(TabsActivity.this, FavWallpaper.class);
+                            Intent i = new Intent(TabsActivity.this, FavouriteWallpaper.class);
                             startActivity(i);
                         }
                         drawerLayout.closeDrawer(GravityCompat.START);
@@ -81,6 +79,7 @@ public class TabsActivity extends AppCompatActivity {
                     case R.id.logout:
                         editor.clear();
                         editor.apply();
+                        FirebaseAuth.getInstance().signOut();
                         finish();
                         break;
 

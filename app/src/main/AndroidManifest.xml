@@ -13,10 +13,10 @@
             android:name=".UserProfile"
             android:exported="true" />
         <activity
-            android:name=".FavWallpaper"
+            android:name=".FavouriteWallpaper"
             android:exported="true" />
         <activity
-            android:name=".FavSound"
+            android:name=".FavouriteSound"
             android:exported="true" />
         <activity
             android:name=".Activities.TabsActivity"

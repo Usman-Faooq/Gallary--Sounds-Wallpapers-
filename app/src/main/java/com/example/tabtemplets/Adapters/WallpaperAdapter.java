@@ -27,7 +27,6 @@ import com.google.firebase.ktx.Firebase;
 
 public class WallpaperAdapter extends FirebaseRecyclerAdapter<FirebaseDataVeriables, WallpaperAdapter.viewholder> {
 
-    boolean checkstatus = false;
     public WallpaperAdapter(@NonNull FirebaseRecyclerOptions<FirebaseDataVeriables> options) {
         super(options);
     }
